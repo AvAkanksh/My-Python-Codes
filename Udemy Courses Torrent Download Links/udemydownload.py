@@ -10,7 +10,6 @@ torrent_url_2 = 'https://meshcron.com/files/FreeCourseSite.com-Udemy%20-%20'+ co
 torrentlinks.append(torrent_url)
 torrentlinks.append(torrent_url_2)
 
-
 for i, url in enumerate(torrentlinks):
     html_text = requests.get(url).text
     soup = BeautifulSoup(html_text,'lxml')
