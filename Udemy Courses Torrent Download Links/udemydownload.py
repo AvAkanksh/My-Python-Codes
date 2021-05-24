@@ -3,6 +3,7 @@ import requests
 import pyperclip
 
 
+
 course_name = input('Enter the course name : ').replace(':','').replace('#','')
 torrentlinks = []
 torrent_url   = 'https://meshcron.com/files/Udemy%20-%20'+ course_name.replace(' ','%20') +'.torrent'
