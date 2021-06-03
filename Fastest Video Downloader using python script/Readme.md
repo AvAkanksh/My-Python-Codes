@@ -27,7 +27,7 @@ urlretrieve(url,'abc.mp4')
 ```
 - Even by this approach the download rate is very slow
 
-## Method 3(My Method):
+## Method 3(My Method - Efficient Method ):
 
 This is the fastest way to download videos using python script
 
