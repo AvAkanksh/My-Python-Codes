@@ -7,7 +7,7 @@ Usually there are 2 methods to download a video using python script
 ```python
 import requests
 
-url = 'http://www.something.com/folder/video.mp4'  # this is just a sample url
+url = 'http://www.something.com/folder/video.mp4'  # this is just a sample url, Please use a valid url
 r = requests.get(url,stream=True)
 with open('abc.mp4','wb') as file:
     for chunk in r.iter_content(chunk_size=1024*1024):
@@ -22,7 +22,7 @@ with open('abc.mp4','wb') as file:
 import requests
 from urllib.request import urlretrieve
 
-url = 'http://www.something.com/folder/video.mp4'  # this is just a sample url
+url = 'http://www.something.com/folder/video.mp4'  # this is just a sample url, Please use a valid url
 urlretrieve(url,'abc.mp4')
 ```
 - Even by this approach the download rate is very slow
@@ -41,7 +41,7 @@ axel is a terminal download manager
 ```python
 from subprocess import run
 
-url = 'http://www.something.com/folder/video.mp4'
+url = 'http://www.something.com/folder/video.mp4' # this is just a sample url, Please use a valid url
 filename = 'abc.mp4'
 run('axel -o {} {}'.format(filename,url))
 ```
