@@ -5,11 +5,11 @@ brave_path = "/usr/bin/brave"
 
 option = webdriver.ChromeOptions()
 option.binary_location = brave_path
-# option.add_argument("--incognito") OPTIONAL
-# option.add_argument("--headless") OPTIONAL
+# option.add_argument("--incognito") #OPTIONAL
+# option.add_argument("--headless") #OPTIONAL
 
 # Create new Instance of Chrome
-driver = webdriver.Chrome(executable_path=driver_path, chrome_options=option)
+driver = webdriver.Chrome(executable_path=driver_path, options=option)
 
 driver.get("https://iittp.codetantra.com/login.jsp")
 
@@ -22,5 +22,5 @@ password.clear()
 password.send_keys("EE18B002")
 
 driver.find_element_by_id("loginBtn").click()
-time.sleep(1)
+time.sleep(0.1)
 driver.find_element_by_link_text("Tests").click()
