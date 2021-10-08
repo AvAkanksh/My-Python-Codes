@@ -2,7 +2,8 @@ from selenium import webdriver
 import time
 
 browsers = ['brave', 'firefox']
-browser = browsers[int(input('Choose a browser: \n1)Brave\n2)Firefox\nEnter you choice (1 or 2)\n:'))-1]
+browser = browsers[0]
+# browser = browsers[int(input('Choose a browser: \n1)Brave\n2)Firefox\nEnter you choice (1 or 2)\n:'))-1]
 
 if(browser == "brave"):
     driver_path = "/usr/local/share/chromedriver"
