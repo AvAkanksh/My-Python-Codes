@@ -10,7 +10,7 @@ if(browser == "brave"):
     brave_path = "/usr/bin/brave"
     option = webdriver.ChromeOptions()
     option.binary_location = brave_path
-    option.add_experimental_options("excludeSwitches", ['enable-automation'])
+    option.add_experimental_option("excludeSwitches", ['enable-automation'])
     # option.add_argument("--incognito") #OPTIONAL
     # option.add_argument("--headless") #OPTIONAL
     driver = webdriver.Chrome(executable_path=driver_path, options=option)
