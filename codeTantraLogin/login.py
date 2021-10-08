@@ -1,19 +1,26 @@
 from selenium import webdriver
 import time
-driver_path = "/usr/local/share/chromedriver"
-brave_path = "/usr/bin/brave"
-option = webdriver.ChromeOptions()
-option.binary_location = brave_path
-# option.add_argument("--incognito") #OPTIONAL
-# option.add_argument("--headless") #OPTIONAL
 
-# Create new Instance of Chrome
-# driver = webdriver.Chrome(executable_path=driver_path, options=option)
-driver_path = '/usr/local/share/geckodriver'
-firefox_path = "/usr/bin/firefox"
-option = webdriver.FirefoxOptions()
-option.binary_location = firefox_path
-driver = webdriver.Firefox(executable_path=driver_path, options=option)
+browsers = ['brave', 'firefox']
+browser = browsers[int(input('Choose a browser: \n1)Brave\n2)Firefox\nEnter you choice (1 or 2)\n:'))-1]
+
+if(browser == "brave"):
+    driver_path = "/usr/local/share/chromedriver"
+    brave_path = "/usr/bin/brave"
+    option = webdriver.ChromeOptions()
+    option.binary_location = brave_path
+    # option.add_argument("--incognito") #OPTIONAL
+    # option.add_argument("--headless") #OPTIONAL
+    driver = webdriver.Chrome(executable_path=driver_path, options=option)
+
+if(browser == "firefox"):
+    driver_path = '/usr/local/share/geckodriver'
+    firefox_path = "/usr/bin/firefox"
+    option = webdriver.FirefoxOptions()
+    option.binary_location = firefox_path
+    option.add_argument("--incognito") #OPTIONAL
+    # option.add_argument("--headless") #OPTIONAL
+    driver = webdriver.Firefox(executable_path=driver_path, options=option)
 
 driver.get("https://iittp.codetantra.com/login.jsp")
 
