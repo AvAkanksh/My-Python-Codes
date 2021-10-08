@@ -2,7 +2,7 @@ from selenium import webdriver
 import time
 
 browsers = ['brave', 'firefox']
-browser = browsers[0]
+browser = browsers[1]
 # browser = browsers[int(input('Choose a browser: \n1)Brave\n2)Firefox\nEnter you choice (1 or 2)\n:'))-1]
 
 if(browser == "brave"):
@@ -19,7 +19,7 @@ if(browser == "firefox"):
     firefox_path = "/usr/bin/firefox"
     option = webdriver.FirefoxOptions()
     option.binary_location = firefox_path
-    option.add_argument("--incognito") #OPTIONAL
+    # option.add_argument("--incognito") #OPTIONAL
     # option.add_argument("--headless") #OPTIONAL
     driver = webdriver.Firefox(executable_path=driver_path, options=option)
 
