@@ -11,6 +11,7 @@ if(browser == "brave"):
     option = webdriver.ChromeOptions()
     option.binary_location = brave_path
     option.add_experimental_option("excludeSwitches", ['enable-automation'])
+    option.add_argument('--disable-notification')
     # option.add_argument("--incognito") #OPTIONAL
     # option.add_argument("--headless") #OPTIONAL
     driver = webdriver.Chrome(executable_path=driver_path, options=option)
