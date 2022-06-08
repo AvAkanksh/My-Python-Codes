@@ -13,7 +13,7 @@ if(browser == "brave"):
     option.add_experimental_option("excludeSwitches", ['enable-automation'])
     option.add_argument('--disable-notification')
     # option.add_argument("--incognito") #OPTIONAL
-    option.add_argument("--headless") #OPTIONAL
+    # option.add_argument("--headless") #OPTIONAL
     driver = webdriver.Chrome(executable_path=driver_path, options=option)
 
 if(browser == "firefox"):
@@ -24,7 +24,7 @@ if(browser == "firefox"):
     option.add_experimental_option("excludeSwitches", ['enable-automation'])
     option.add_argument('--disable-notification')
     # option.add_argument("--incognito") #OPTIONAL
-    option.add_argument("--headless") #OPTIONAL
+    # option.add_argument("--headless") #OPTIONAL
     driver = webdriver.Firefox(executable_path=driver_path, options=option)
 
 driver.get("https://iittp.codetantra.com/login.jsp")
