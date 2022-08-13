@@ -5,9 +5,10 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-options = webdriver.ChromeOptions()
-s=Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=s,options=options)
+# options = webdriver.ChromeOptions()
+# s=Service(ChromeDriverManager().install())
+# driver = webdriver.Chrome(service=s,options=options)
+driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get('https://www.linkedin.com')
 username = driver.find_element(by=By.ID,value="session_key")
