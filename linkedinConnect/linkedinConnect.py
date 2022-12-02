@@ -21,7 +21,7 @@ password.send_keys(os.environ['Linkedin_PWD'])
 print("Logging IN........")
 submit = driver.find_element(by=By.XPATH,value='//*[@id="main-content"]/section[1]/div/div/form/button')
 driver.execute_script('arguments[0].click();',submit)
-company_names = ['google','amazon','microsoft','facebook','meta','netflix','apple']
+company_names = ['sprinklr','atlassian','phonepe-internet','walmart','google','amazon','microsoft','facebook','meta','netflix','apple']
 for i in range(len(company_names)):
     try:
         url = 'https://www.linkedin.com/company/'+company_names[i]+'/people/'
