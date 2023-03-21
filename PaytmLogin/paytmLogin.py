@@ -1,12 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import os
 from datetime import datetime
-import pyautogui
+import pyautogui as py
 options = webdriver.ChromeOptions()
 s=Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=s,options=options)
@@ -19,20 +18,12 @@ password.send_keys(os.environ['Paytm_Password'])
 print("Logging IN........")
 submit = driver.find_element(by=By.XPATH,value='//*[@id="loginForm:loginButton"]/span')
 driver.execute_script('arguments[0].click();',submit)
-time.sleep(25)
+time.sleep(23)
+print("Logged IN........")
+py.click(695,425)
+py.click(700,485)
+print("Selected Option Out of Office")
 # Set the location of the punch out according to your screen!
-pyautogui.click(900,390)
+py.click(900,390)
+print("Clicked on Punched In/Out")
 time.sleep(7)
-# out_of_office=driver.find_element(by=By.XPATH,value='/html/body/div[1]/div[2]/div/app-root/div/div[1]/div/div/div/div/div/app-home/app-card/div/div/div[2]/app-punch-inout/div/div[1]/div/div/a[2]')
-# driver.execute_script('arguments[0].click();',out_of_office)
-# punch_in = driver.find_element(by=By.CLASS_NAME,value="punch-in")
-# punch_out = driver.find_element(by=By.CLASS_NAME,value="punch-out")
-# print(punch_in)
-# print(punch_out)
-# hrs=int(datetime.now().strftime("%H"))
-# if(hrs<12):
-#     driver.execute_script('arguments[0].click();',punch_in)
-
-# else:
-#     driver.execute_script('arguments[0].click();',punch_out)
-# time.sleep(2)
