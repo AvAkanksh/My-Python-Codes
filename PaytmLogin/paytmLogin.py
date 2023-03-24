@@ -6,6 +6,8 @@ import time
 import os
 from datetime import datetime
 import pyautogui as py
+import json
+
 options = webdriver.ChromeOptions()
 s=Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=s,options=options)
@@ -13,8 +15,9 @@ driver.maximize_window()
 driver.get('https://elevate.peoplestrong.com/altLogin.jsf')
 username = driver.find_element(by=By.ID,value="loginForm:username12")
 password = driver.find_element(by=By.ID,value="loginForm:password")
-username.send_keys(os.environ['Paytm_Username'])
-password.send_keys(os.environ['Paytm_Password'])
+data = json.load(open("/Users/aduganivanjari/Documents/GitRepositories/My-Python-Codes/PaytmLogin/credentials.json"))
+username.send_keys(data['username'])
+password.send_keys(data['password'])
 print("Logging IN........")
 submit = driver.find_element(by=By.XPATH,value='//*[@id="loginForm:loginButton"]/span')
 driver.execute_script('arguments[0].click();',submit)
