@@ -18,8 +18,8 @@ password = driver.find_element(by=By.ID,value="loginForm:password")
 data = json.load(open("/Users/adugani.vanjari/Documents/GitRepositories/My-Python-Codes/PaytmLogin/credentials.json"))
 username.send_keys(data['username'])
 password.send_keys(data['password'])
-clicks=[[[590,370],[600,425],[770,325]],[[580,477],[580,530],[770,445]]]
-i = 1
+clicks=[[[590,370],[600,425],[770,325]],[[580,480],[580,530],[770,450]],[[580,520],[580,570],[770,490]]]
+i = 2
 print("Logging IN........")
 submit = driver.find_element(by=By.XPATH,value='//*[@id="loginForm:loginButton"]/span')
 driver.execute_script('arguments[0].click();',submit)
