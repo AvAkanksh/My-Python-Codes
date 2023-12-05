@@ -31,11 +31,11 @@ driver.get("https://iittp.codetantra.com/login.jsp")
 
 username = driver.find_element_by_id("loginId")
 username.clear()
-username.send_keys("ee18b002@iittp.ac.in")
+username.send_keys("abc@gmail.com")
 
 password = driver.find_element_by_name("password")
 password.clear()
-password.send_keys("EE18B002")
+password.send_keys("xxxxxxxxxxx")
 
 driver.find_element_by_id("loginBtn").click()
 time.sleep(0.1)
