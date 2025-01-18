@@ -24,11 +24,13 @@ password = driver.find_element(by=By.ID,value="password")
 username.send_keys(os.environ['Linkedin_UID'])
 password.send_keys(os.environ['Linkedin_PWD'])
 print("Logging IN........")
-submit = driver.find_element(by=By.XPATH,value='//*[@id="organic-div"]/form/div[3]/button')
+# submit = driver.find_element(by=By.XPATH,value='//*[@id="organic-div"]/form/div[3]/button')
 # submit = driver.find_element(by=By.XPATH,value='/html/body/main/section[1]/div/div/form/div[2]/button')
+submit = driver.find_element(by=By.XPATH,value='/html/body/div/main/div[2]/div[1]/form/div[4]/button')
 driver.execute_script('arguments[0].click();',submit)
 company_names=["gleanwork","maverick-derivatives","cohesity","rubrik-inc","flow-traders","capital-group","da-vinci-trading","nk-securities","quantbox-research-pte","quadeye","micron-technology","worldquant","gravitonresearchcapital","millennium-partners","blackstonegroup","gulftalent.com","sprinklr","alpha-grep","edge-focus","eversana","quicksell","eightfoldai-eightfold","abacusai","klacorp","trepup","infurnia","trilogyinnovations","rippling","mediatek","invygo-app","sharechat","enphase-energy","lekconsulting","amazon","slbglobal","fast-retailing","morgan-stanley","vmock-inc","teachmint","morgan-stanley","zetasuite","vamstar","skiify","accenture-japan","jpmorganchase",'atlassian','phonepe-internet','walmart','google','amazon','microsoft','facebook','meta','netflix','apple']
 #company_names = ['sprinklr','atlassian','phonepe-internet','walmart','google','amazon','microsoft','facebook','meta','netflix','apple']
+#company_names=["nk-securities"]
 random.shuffle(company_names)
 wait = WebDriverWait(driver, 4)
 print("--"*40)
